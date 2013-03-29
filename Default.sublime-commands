@@ -1,0 +1,7 @@
+[
+    {
+        "caption": "Bower: Install",
+        "command": "bower",
+        "args": {}
+    }
+]
