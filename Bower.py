@@ -87,12 +87,10 @@ class BowerGetCommand(sublime_plugin.TextCommand):
                 dir = 1
 
             i += dir
-            sublime.status_message(('Downloading %s') % self.pkg_name) 
+            sublime.status_message(('Downloading %s [%s=%s]') % (self.pkg_name, ' ' * before, ' ' * after)) 
 
             sublime.set_timeout(lambda: self.handle_threads(edit, threads, offset, i, dir), 100)
             return
-
-        self.view.erase_status('bower')
 
         if status:
             sublime.status_message(('Bower: installed %s') % self.pkg_name)
