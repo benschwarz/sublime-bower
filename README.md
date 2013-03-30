@@ -19,7 +19,7 @@ This is my first attempt at writing a ST plugin… I don't write python either, 
 
 ## Contributing
 
-* Check the issue list to find something to help with
+* Check the [issue list](https://github.com/benschwarz/sublime-bower/issues) to find something to help with
 * Add any implementation queries, ideas or psudeo code
 * Fork the project, work in a topic branch
 * Send a pull request
