@@ -14,7 +14,7 @@ Packages will be installed the current working directory.
 
 * Have bower installed: `npm install bower -g`
 
-## Testing / known to work
+## Testing / platforms
 
 * Untested on Linux (Let me know)
 * Untested on Windows (Let me know)
