@@ -5,8 +5,10 @@ import sys
 import threading
 import re
 import subprocess
-import httplib
+import urllib2
 import json
+import gzip
+from StringIO import StringIO
 
 LOCAL_PATH = ':/usr/local/bin:/usr/local/sbin:'
 os.environ['PATH'] += LOCAL_PATH 
@@ -21,21 +23,28 @@ class BowerCommand(sublime_plugin.WindowCommand):
         self.list_packages()
 
     def list_packages(self):
-        host = "bower.herokuapp.com"
-        conn = httplib.HTTPConnection(host, '80')
+        uri = "http://bower.herokuapp.com/packages"
+        request = urllib2.Request(uri)
+        request.add_header('Accept-encoding', 'gzip')
 
         try:
-            conn.request('GET', '/packages')
-            response = conn.getresponse().read()
+            response = urllib2.urlopen(request)
+
+            if response.info().get('Content-Encoding') == 'gzip':
+                buf = StringIO( response.read() )
+                f = gzip.GzipFile(fileobj=buf)
+                responseText = f.read()           
+            else:
+                responseText = response.read()
             
-            packages = json.loads(response)
+            packages = json.loads(responseText)
             packages.reverse()
 
             for package in packages:
                 self.fileList.append([package['name'], package['url']])
             self.window.show_quick_panel(self.fileList, self.get_file)
         except:
-            sublime.error_message('Unable to connect to ' + host + ". Check your internet connection.")
+            sublime.error_message('Unable to connect to ' + uri + ". Check your internet connection.")
 
     def get_file(self, index):
         if (index > -1):
