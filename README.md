@@ -10,6 +10,8 @@ Run the command "Bower install" to get a list of packages from the canonical bow
 
 Packages will be installed the current working directory. 
 
+![Demo of plugin in action](sublime-plugin.gif)
+
 ## Requirements
 
 * Have bower installed: `npm install bower -g`
