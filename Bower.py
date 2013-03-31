@@ -109,24 +109,11 @@ class BowerDownload(threading.Thread):
         self.install_package()
 
     def install_package(self):
-        downloaded = False
         clidownload = CliDownloader()
         
         if clidownload.find_binary('bower'):
             command = [clidownload.find_binary('bower'), 'install', self.pkg_name, '--save']
             clidownload.execute(command, cwd=self.cwd)
-            downloaded = True
-
-        if not downloaded:
-            sublime.error_message('Unable to download ' + self.pkg_name +
-                        ' bower not installed? Install bower with `npm install bower -g`')
-            return False
-        else:
-            self.result = True
-
-class BinaryNotFoundError(Exception):
-    pass
-
 
 class NonCleanExitError(Exception):
     def __init__(self, returncode):
@@ -142,8 +129,7 @@ class CliDownloader():
             path = os.path.join(dir, name)
             if os.path.exists(path):
                 return path
-
-        raise BinaryNotFoundError('The binary ' + name + ' could not be located')
+        sublime.error_message('Bower could not be found in your $PATH. Install bower with `npm install bower -g`')
 
     def execute(self, command, cwd):
         proc = subprocess.Popen(command, cwd=cwd, stdin=subprocess.PIPE,
