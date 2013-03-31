@@ -113,7 +113,7 @@ class BowerDownload(threading.Thread):
         clidownload = CliDownloader()
         
         if clidownload.find_binary('bower'):
-            command = [clidownload.find_binary('bower'), 'install', self.pkg_name]
+            command = [clidownload.find_binary('bower'), 'install', self.pkg_name, '--save']
             clidownload.execute(command, cwd=self.cwd)
             downloaded = True
 
