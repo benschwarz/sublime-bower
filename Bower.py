@@ -13,11 +13,12 @@ from StringIO import StringIO
 LOCAL_PATH = ':/usr/local/bin:/usr/local/sbin:'
 os.environ['PATH'] += LOCAL_PATH 
 
-class BowerCommand(sublime_plugin.WindowCommand):
-    fileList = []
+class DiscoverPackageCommand(sublime_plugin.WindowCommand):
+    def run(self):
+        self.window.run_command('open_url', {'url': 'http://sindresorhus.com/bower-components'})
 
-    def __init__(self, *args, **kwargs):
-        super(BowerCommand, self).__init__(*args, **kwargs)
+class InstallCommand(sublime_plugin.WindowCommand):
+    fileList = []
 
     def run(self, *args, **kwargs):
         self.list_packages()

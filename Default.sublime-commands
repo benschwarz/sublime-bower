@@ -1,7 +1,12 @@
 [
     {
-        "caption": "Bower: Install",
-        "command": "bower",
-        "args": {}
+      "caption": "Bower: Install",
+      "command": "install",
+      "args": {}
+    },
+    {
+      "caption": "Bower: Discover packages",
+      "command": "discover_package",
+      "args": {}
     }
 ]
