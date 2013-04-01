@@ -14,9 +14,7 @@ Packages will be installed the current working directory.
 
 ## Installation
 
-This plugin has a [pending pull-request](https://github.com/wbond/package_control_channel/pull/1219) to be added to Package control. 
-
-In the meantime, you can manually install it: (In your Terminal)
+Install via [Package Control](http://wbond.net/sublime_packages/package_control) (Recommended - search for "Bower"), or alternately, you can manually install it: (In your Terminal, on a Mac.)
 
 ```bash
   cd ~/Library/Application\ Support/Sublime\ Text\ 2/
