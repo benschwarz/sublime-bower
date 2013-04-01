@@ -12,8 +12,10 @@ from StringIO import StringIO
 
 if os.name == 'nt':
     LOCAL_PATH = ''
+    BINARY_NAME = 'bower.cmd'
 else:
-    LOCAL_PATH = ':/usr/local/bin:/usr/local/sbin:'
+    LOCAL_PATH = ':/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin'
+    BINARY_NAME = 'bower'
 
 os.environ['PATH'] += LOCAL_PATH
 
@@ -123,16 +125,9 @@ class BowerDownload(threading.Thread):
         self.install_package()
 
     def install_package(self):
-        clidownload = CliDownloader()
-
-        bower_exec = 'bower'
-
-        if os.name == 'nt':
-            bower_exec = 'bower.cmd'
-
-        if clidownload.find_binary(bower_exec):
-            command = [clidownload.find_binary(bower_exec), 'install', self.pkg_name, '--save']
-            clidownload.execute(command, cwd=self.cwd)
+        cli = BowerCLI()
+        command = ['install', self.pkg_name, '--save']
+        cli.execute(command, cwd=self.cwd)
 
 class NonCleanExitError(Exception):
     def __init__(self, returncode):
@@ -142,15 +137,18 @@ class NonCleanExitError(Exception):
         return repr(self.returncode)
 
 
-class CliDownloader():
-    def find_binary(self, name):
+class BowerCLI():
+    def find_binary(self):
         for dir in os.environ['PATH'].split(os.pathsep):
-            path = os.path.join(dir, name)
+            path = os.path.join(dir, BINARY_NAME)
             if os.path.exists(path):
                 return path
-        sublime.error_message('Bower could not be found in your $PATH. Install bower with `npm install bower -g`')
+        sublime.error_message(BINARY_NAME + ' could not be found in your $PATH. Install bower with `npm install bower -g`')
 
     def execute(self, command, cwd):
+        binary = self.find_binary()
+        command.insert(0, binary)
+
         proc = subprocess.Popen(command, cwd=cwd, stdin=subprocess.PIPE,
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
