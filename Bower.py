@@ -10,8 +10,12 @@ import json
 import gzip
 from StringIO import StringIO
 
-LOCAL_PATH = ':/usr/local/bin:/usr/local/sbin:'
-os.environ['PATH'] += LOCAL_PATH 
+if os.name == 'nt':
+    LOCAL_PATH = ''
+else:
+    LOCAL_PATH = ':/usr/local/bin:/usr/local/sbin:'
+
+os.environ['PATH'] += LOCAL_PATH
 
 class DiscoverPackageCommand(sublime_plugin.WindowCommand):
     def run(self):
@@ -120,9 +124,14 @@ class BowerDownload(threading.Thread):
 
     def install_package(self):
         clidownload = CliDownloader()
-        
-        if clidownload.find_binary('bower'):
-            command = [clidownload.find_binary('bower'), 'install', self.pkg_name, '--save']
+
+        bower_exec = 'bower'
+
+        if os.name == 'nt':
+            bower_exec = 'bower.cmd'
+
+        if clidownload.find_binary(bower_exec):
+            command = [clidownload.find_binary(bower_exec), 'install', self.pkg_name, '--save']
             clidownload.execute(command, cwd=self.cwd)
 
 class NonCleanExitError(Exception):
