@@ -10,7 +10,7 @@ Run the command "Bower install" to get a list of packages from the canonical bow
 
 Packages will be installed the current working directory. 
 
-![Demo of plugin in action](sublime-plugin.gif)
+![Demo of plugin in action](http://0.germanforblack.com/sublime-plugin.gif)
 
 ## Installation
 
