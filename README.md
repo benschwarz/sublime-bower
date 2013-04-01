@@ -27,7 +27,6 @@ Install via [Package Control](http://wbond.net/sublime_packages/package_control)
 
 ## Testing / platforms
 
-* Untested on Windows (Let me know)
 * Untested on Sublime Text v3 (Let me know)
 
 #### PSA
