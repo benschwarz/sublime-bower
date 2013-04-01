@@ -12,6 +12,17 @@ Packages will be installed the current working directory.
 
 ![Demo of plugin in action](sublime-plugin.gif)
 
+## Installation
+
+This plugin has a [pending pull-request](https://github.com/wbond/package_control_channel/pull/1219) to be added to Package control. 
+
+In the meantime, you can manually install it: (In your Terminal)
+
+```bash
+  cd ~/Library/Application\ Support/Sublime\ Text\ 2/
+  git clone git://github.com/benschwarz/sublime-bower.git Bower
+```
+
 ## Requirements
 
 * Have bower installed: `npm install bower -g`
