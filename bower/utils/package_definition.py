@@ -11,7 +11,7 @@ class PackageDefinition():
       return "components"
 
   def read(self, package_name):
-    path = self.definition_path() + "/" + package_name
+    path = self.definition_path() + "/" + package_name + "/component.json"
 
     definition = open(path)
     return json.loads(definition)
