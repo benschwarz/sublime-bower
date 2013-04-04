@@ -16,9 +16,10 @@ class PackageDefinition:
     def definition_path(self):
         bowerrc = BowerRC()
         bowercpath = bowerrc.read(self.projectdir)
-
-        if bowercpath is not None and 'directory' in bowercpath:
-            return bowerrc.read(self.projectdir)['directory']
+        
+        if 'directory' in bowercpath:
+            bower_directory = bowerrc.read(self.projectdir)['directory']
+            return os.path.join(self.projectdir, bower_directory)
         else:
             return os.path.join(self.projectdir, "components")
 
