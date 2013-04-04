@@ -14,7 +14,13 @@ Packages will be installed the current working directory.
 
 ## Installation
 
-Install via [Package Control](http://wbond.net/sublime_packages/package_control) (Recommended - search for "Bower"), or alternately, you can manually install it: (In your Terminal, on a Mac.)
+Sublime Package Control allows you to easily install or remove sublime-bower (and many other packages) from within the editor. It offers automatically updating packages as well so you no longer need to keep track of changes in sublime-bower.
+
+Install Sublime Package Control (if you haven't done so already) from http://wbond.net/sublime_packages/package_control
+
+Bring up the command palette (default ctrl+shift+p or cmd+shift+p) and start typing Package Control: Install Package then press return or click on that option to activate it. You will be presented with a new Quick Panel with the list of available packages. (Search for "Bower")
+
+Alternately, you can manually install it: (In your Terminal)
 
 ```bash
   cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
