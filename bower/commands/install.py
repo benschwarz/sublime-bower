@@ -11,8 +11,8 @@ class InstallCommand(sublime_plugin.WindowCommand):
         packages.reverse()
 
         for package in packages:
-            self.fileList.append([package['name'], package['url']])
-        self.window.show_quick_panel(self.fileList, self.get_file)
+            fileList.append([package['name'], package['url']])
+        self.window.show_quick_panel(fileList, self.get_file)
 
     def get_file(self, index):
         if (index > -1):
