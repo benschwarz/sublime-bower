@@ -2,12 +2,11 @@ import sublime_plugin
 from bower.utils.api import API
 
 class InstallCommand(sublime_plugin.WindowCommand):
-    fileList = []
-
     def run(self, *args, **kwargs):
         self.list_packages()
 
     def list_packages(self):
+        fileList = []
         packages = API().get('packages')
         packages.reverse()
 
