@@ -24,6 +24,9 @@ Install via [Package Control](http://wbond.net/sublime_packages/package_control)
 ## Requirements
 
 * Have bower installed: `npm install bower -g`
+* Have the bower binary in your path
+
+Its a good idea to do a test run to make sure that bower is working - if `bower install jquery` works, then you're ready to go.
 
 ## Testing / platforms
 
