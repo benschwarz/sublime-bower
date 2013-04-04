@@ -2,28 +2,22 @@ import os
 import json
 from os.path import expanduser
 
+
 class BowerRC():
-  def exists():
-    if self.get_path() != None:
-      return true
-    else:
-      return false
+    def get_path(self, projectdir=""):
+        bowerrc = ".bowerrc"
+        projectrc = os.path.join(projectdir, bowerrc)
+        homerc = os.path.join(expanduser("~"), bowerrc)
 
-  def get_path(this):
-    bowerrc = ".bowerrc"
-    project_home_dir = "" # Figure this out
+        for path in [projectrc, homerc]:
+            if os.path.exists(path):
+                return path
 
-    projectrc = os.path.join(project_home_dir, bowerrc)
-    homerc = os.path.join(expanduser("~"), bowerrc)
+        return None
 
-    for path in [projectrc, homerc]:
-      if os.path.exists(path)
-        return path
-
-    return None
-
-  def read(this):
-    if self.exists():
-      return json.loads(self.get_path())
-    else:
-      return {}
+    def read(self, projectdir):
+        path = self.get_path(projectdir)
+        if path is not None:
+            return json.loads(open(path).read())
+        else:
+            return {}
