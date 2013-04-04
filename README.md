@@ -17,7 +17,7 @@ Packages will be installed the current working directory.
 Install via [Package Control](http://wbond.net/sublime_packages/package_control) (Recommended - search for "Bower"), or alternately, you can manually install it: (In your Terminal, on a Mac.)
 
 ```bash
-  cd ~/Library/Application\ Support/Sublime\ Text\ 2/
+  cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
   git clone git://github.com/benschwarz/sublime-bower.git Bower
 ```
 
