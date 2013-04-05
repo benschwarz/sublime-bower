@@ -6,13 +6,13 @@ class InstallCommand(sublime_plugin.WindowCommand):
         self.list_packages()
 
     def list_packages(self):
-        fileList = []
+        self.fileList = []
         packages = API().get('packages')
         packages.reverse()
 
         for package in packages:
-            fileList.append([package['name'], package['url']])
-        self.window.show_quick_panel(fileList, self.get_file)
+            self.fileList.append([package['name'], package['url']])
+        self.window.show_quick_panel(self.fileList, self.get_file)
 
     def get_file(self, index):
         if (index > -1):
