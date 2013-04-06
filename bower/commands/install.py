@@ -1,10 +1,8 @@
 import sublime_plugin
 
-
 try:
     # ST3
-    from .bower.utils.api import API
-
+    from ..utils.api import API
 except ImportError:
     # ST2
     from bower.utils.api import API

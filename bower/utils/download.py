@@ -2,7 +2,7 @@ from threading import Thread
 
 try:
     # ST3
-    from .bower.utils.cli import CLI
+    from ..utils.cli import CLI
 except ImportError:
     # ST2
     from bower.utils.cli import CLI

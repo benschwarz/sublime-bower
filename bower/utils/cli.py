@@ -4,7 +4,7 @@ import subprocess
 
 try:
     # ST3
-    from .bower.exceptions.non_clean_exit_error import NonCleanExitError
+    from ..exceptions.non_clean_exit_error import NonCleanExitError
 
 except ImportError:
     # ST2
