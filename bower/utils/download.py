@@ -7,6 +7,7 @@ except ImportError:
     # ST2
     from bower.utils.cli import CLI
 
+
 class Download(Thread):
     def __init__(self, pkg_name, cwd):
         self.pkg_name = pkg_name

@@ -5,7 +5,6 @@ import subprocess
 try:
     # ST3
     from ..exceptions.non_clean_exit_error import NonCleanExitError
-
 except ImportError:
     # ST2
     from bower.exceptions.non_clean_exit_error import NonCleanExitError
@@ -19,6 +18,7 @@ else:
 
 os.environ['PATH'] += LOCAL_PATH
 
+
 class CLI():
     def find_binary(self):
         for dir in os.environ['PATH'].split(os.pathsep):
@@ -31,8 +31,7 @@ class CLI():
         binary = self.find_binary()
         command.insert(0, binary)
 
-        proc = subprocess.Popen(command, cwd=cwd, stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        proc = subprocess.Popen(command, cwd=cwd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
         output = proc.stdout.read()
         returncode = proc.wait()

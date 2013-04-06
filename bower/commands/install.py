@@ -1,11 +1,11 @@
 import sublime_plugin
-
 try:
     # ST3
     from ..utils.api import API
 except ImportError:
     # ST2
     from bower.utils.api import API
+
 
 class InstallCommand(sublime_plugin.WindowCommand):
     def run(self, *args, **kwargs):
