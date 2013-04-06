@@ -48,3 +48,7 @@ This is my first attempt at writing a ST plugin… I don't write python either, 
 * Fork the project, work in a topic branch
 * Send a pull request
 * You the boss now, dawg
+
+## Licence
+
+[Licenced MIT.](LICENCE)
