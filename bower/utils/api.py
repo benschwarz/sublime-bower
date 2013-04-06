@@ -1,18 +1,19 @@
 import json
 import gzip
-from StringIO import StringIO
 import sublime
 
 try:
   # ST3
   import urllib.request as req
-except ImportError: 
+except ImportError:
+  # ST2
   import urllib2 as req
 
 try:
   # ST3
   from io import StringIO 
 except ImportError:
+  # ST2
   from StringIO import StringIO
 
 class API():

@@ -1,7 +1,14 @@
 import sublime
 import os
 import subprocess
-from bower.exceptions.non_clean_exit_error import NonCleanExitError
+
+try:
+    # ST3
+    from Bower.bower.exceptions.non_clean_exit_error import NonCleanExitError
+
+except ImportError:
+    # ST2
+    from bower.exceptions.non_clean_exit_error import NonCleanExitError
 
 if os.name == 'nt':
     LOCAL_PATH = ';' + os.getenv('APPDATA') + '\\npm'

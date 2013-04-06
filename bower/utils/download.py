@@ -1,5 +1,11 @@
 from threading import Thread
-from bower.utils.cli import CLI
+
+try:
+    # ST3
+    from Bower.bower.utils.cli import CLI
+except ImportError:
+    # ST2
+    from bower.utils.cli import CLI
 
 class Download(Thread):
     def __init__(self, pkg_name, cwd):

@@ -2,7 +2,14 @@ import sublime
 import sublime_plugin
 import threading
 import sys
-from bower.utils.download import Download
+
+try:
+    # ST3
+    from Bower.bower.utils.download import Download
+
+except ImportError:
+    # ST2
+    from bower.utils.download import Download
 
 class DownloadPackageCommand(sublime_plugin.TextCommand):
     result = None
