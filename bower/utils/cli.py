@@ -31,7 +31,13 @@ class CLI():
         binary = self.find_binary()
         command.insert(0, binary)
 
-        proc = subprocess.Popen(command, cwd=cwd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        cflags = 0
+
+        if os.name == 'nt':
+            cflags = 0x08000000  # Avoid opening of a cmd on Windows
+
+        proc = subprocess.Popen(command, cwd=cwd, stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, creationflags=cflags)
 
         output = proc.stdout.read()
         returncode = proc.wait()
