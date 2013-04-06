@@ -5,7 +5,7 @@ import sys
 
 try:
     # ST3
-    from Bower.bower.utils.download import Download
+    from .bower.utils.download import Download
 
 except ImportError:
     # ST2
