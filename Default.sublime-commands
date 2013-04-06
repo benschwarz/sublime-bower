@@ -8,5 +8,10 @@
       "caption": "Bower: Discover packages",
       "command": "discover_package",
       "args": {}
+    },
+    {
+      "caption": "Bower: Configure project",
+      "command": "bowerrc",
+      "args": {}
     }
 ]
