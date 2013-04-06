@@ -4,7 +4,7 @@ import subprocess
 from bower.exceptions.non_clean_exit_error import NonCleanExitError
 
 if os.name == 'nt':
-    LOCAL_PATH = ''
+    LOCAL_PATH = ';' + os.getenv('APPDATA') + '\\npm'
     BINARY_NAME = 'bower.cmd'
 else:
     LOCAL_PATH = ':/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin'
