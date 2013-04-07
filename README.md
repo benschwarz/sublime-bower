@@ -48,10 +48,10 @@ Its a good idea to do a test run to make sure that bower is working - if `bower 
 * You the boss now, dawg
 
 # Contributors
-* @eonlepapillon - ST3 support
-* @moonpyk - Windows support
-* @sindresorhus - Bower support
-* @jaredwy - Incredible autocompletions… not in master (yet)
+* [@eonlepapillon](http://github.com/eonlepapillon) - ST3 support
+* [@moonpyk](http://github.com/moonpyk) - Windows support
+* [@sindresorhus](http://github.com/sindresorhus) - Bower support
+* [@jaredwy](http://github.com/jaredwy) - Incredible autocompletions… not in master (yet)
 
 ## Licence
 
