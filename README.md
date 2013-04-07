@@ -34,12 +34,10 @@ Alternately, you can manually install it: (In your Terminal)
 
 Its a good idea to do a test run to make sure that bower is working - if `bower install jquery` works, then you're ready to go.
 
-## Testing / platforms
+## Platforms
 
-* Untested on Sublime Text v3 (Let me know)
-
-#### PSA
-This is my first attempt at writing a ST plugin… I don't write python either, so if you think you can help, lemme know. k? word.
+* Works on Sublime text 2 & 3
+* Works on Mac, Linux & Windows
 
 ## Contributing
 
@@ -48,6 +46,12 @@ This is my first attempt at writing a ST plugin… I don't write python either, 
 * Fork the project, work in a topic branch
 * Send a pull request
 * You the boss now, dawg
+
+# Contributors
+* @eonlepapillon - ST3 support
+* @moonpyk - Windows support
+* @sindresorhus - Bower support
+* @jaredwy - Incredible autocompletions… not in master (yet)
 
 ## Licence
 
