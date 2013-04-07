@@ -12,6 +12,12 @@ Packages will be installed the current working directory.
 
 ![Demo of plugin in action](http://0.germanforblack.com/sublime-plugin.gif)
 
+## Requirements
+
+* Install bower: `npm install bower -g`
+* Ensure that the bower binary is available in your path (type `bower` into your commandline)
+* [Install msysgit](https://github.com/twitter/bower#a-note-for-windows-users) (Windows only)
+
 ## Installation
 
 Sublime Package Control allows you to easily install or remove sublime-bower (and many other packages) from within the editor. It offers automatically updating packages as well so you no longer need to keep track of changes in sublime-bower.
@@ -27,12 +33,6 @@ Alternately, you can manually install it: (In your Terminal)
   git clone git://github.com/benschwarz/sublime-bower.git Bower
 ```
 
-## Requirements
-
-* Install bower: `npm install bower -g`
-* Ensure that the bower binary is available in your path (type `bower` into your commandline)
-* [Install msysgit](https://github.com/twitter/bower#a-note-for-windows-users) (Windows only)
-
 ## Platforms
 
 * Works on Sublime text 2 & 3
@@ -46,7 +46,7 @@ Alternately, you can manually install it: (In your Terminal)
 * Send a pull request
 * You the boss now, dawg
 
-# Contributors
+## Contributors
 * [@eonlepapillon](http://github.com/eonlepapillon) - ST3 support
 * [@moonpyk](http://github.com/moonpyk) - Windows support
 * [@sindresorhus](http://github.com/sindresorhus) - Bower support
