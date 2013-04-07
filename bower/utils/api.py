@@ -35,7 +35,7 @@ class API():
         else:
             responseText = response.read()
 
-        # try:
-        return json.loads(responseText.decode())
-        # except:
-            # sublime.error_message('Oh Snap! It looks like theres an error with the Bower API.')
+        try:
+            return json.loads(responseText.decode())
+        except:
+            sublime.error_message('Oh Snap! It looks like theres an error with the Bower API.')
