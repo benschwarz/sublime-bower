@@ -12,6 +12,8 @@ Packages will be installed the current working directory.
 
 ![Demo of plugin in action](http://0.germanforblack.com/sublime-plugin.gif)
 
+Want to know more about Bower, or this plugin in action? [Checkout my screencast.](http://germanforblack.com/post/46734908388/i-built-a-plugin-for-sublime-text-that-integrates) 
+
 ## Requirements
 
 * Install bower: `npm install bower -g`
