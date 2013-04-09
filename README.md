@@ -28,7 +28,7 @@ Bring up the command palette (default ctrl+shift+p or cmd+shift+p) and start typ
 
 Alternately, you can manually install it:
 
-Under Mac OS X, in your Terminal:
+On Mac OS X, in your Terminal:
 
 ```bash
   cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
