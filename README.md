@@ -14,21 +14,19 @@ Packages will be installed the current working directory.
 
 Want to know more about Bower, or this plugin in action? [Checkout my screencast.](http://germanforblack.com/post/46734908388/i-built-a-plugin-for-sublime-text-that-integrates) 
 
-## Requirements
+## Installation
 
 * Install bower: `npm install bower -g`
 * Ensure that the bower binary is available in your path (type `bower` into your Terminal / Command prompt)
 * [Install msysgit](https://github.com/twitter/bower#a-note-for-windows-users) (Windows only)
 
-## Installation
-
 Sublime Package Control allows you to easily install or remove sublime-bower (and many other packages) from within the editor. It offers automatically updating packages as well so you no longer need to keep track of changes in sublime-bower.
 
-Install Sublime Package Control (if you haven't done so already) from http://wbond.net/sublime_packages/package_control
+* Install Sublime Package Control (if you haven't done so already) from http://wbond.net/sublime_packages/package_control
 
-Bring up the command palette (default ctrl+shift+p or cmd+shift+p) and start typing Package Control: Install Package then press return or click on that option to activate it. You will be presented with a new Quick Panel with the list of available packages. (Search for "Bower")
+* Bring up the command palette (default ctrl+shift+p or cmd+shift+p) and start typing Package Control: Install Package then press return or click on that option to activate it. You will be presented with a new Quick Panel with the list of available packages. (Search for "Bower")
 
-Alternately, you can manually install it:
+Alternately, instead of using Package Control, you can manually install sublime-bower (be aware, you'll have to fetch updates yourself):
 
 On Mac OS X, in your Terminal:
 
