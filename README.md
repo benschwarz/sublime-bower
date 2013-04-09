@@ -15,7 +15,7 @@ Packages will be installed the current working directory.
 ## Requirements
 
 * Install bower: `npm install bower -g`
-* Ensure that the bower binary is available in your path (type `bower` into your commandline)
+* Ensure that the bower binary is available in your path (type `bower` into your Terminal / Command prompt)
 * [Install msysgit](https://github.com/twitter/bower#a-note-for-windows-users) (Windows only)
 
 ## Installation
@@ -26,10 +26,19 @@ Install Sublime Package Control (if you haven't done so already) from http://wbo
 
 Bring up the command palette (default ctrl+shift+p or cmd+shift+p) and start typing Package Control: Install Package then press return or click on that option to activate it. You will be presented with a new Quick Panel with the list of available packages. (Search for "Bower")
 
-Alternately, you can manually install it: (In your Terminal)
+Alternately, you can manually install it:
+
+Under Mac OS X, in your Terminal:
 
 ```bash
   cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+  git clone git://github.com/benschwarz/sublime-bower.git Bower
+```
+
+On Windows, inside a command prompt (cmd.exe):
+
+```cmd
+  cd "%APPDATA%\Sublime Text 2\Packages"
   git clone git://github.com/benschwarz/sublime-bower.git Bower
 ```
 
