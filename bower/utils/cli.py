@@ -25,7 +25,7 @@ class CLI():
             path = os.path.join(dir, BINARY_NAME)
             if os.path.exists(path):
                 return path
-        sublime.error_message(BINARY_NAME + ' could not be found in your $PATH. Install bower with `npm install bower -g`')
+        sublime.error_message(BINARY_NAME + ' could not be found in your $PATH. Check the installation guidelines - https://github.com/benschwarz/sublime-bower#installation')
 
     def execute(self, command, cwd):
         binary = self.find_binary()
