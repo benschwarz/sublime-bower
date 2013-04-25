@@ -7,16 +7,13 @@ Want to learn about the available packages? Check [Bower components](http://sind
 ## How to use
 
 Run the command "Bower install" to get a list of packages from the canonical bower repository.
-
 Packages will be installed the current working directory. 
-
-![Demo of plugin in action](http://0.germanforblack.com/sublime-plugin.gif)
 
 Want to know more about Bower, or this plugin in action? [Checkout my screencast.](http://germanforblack.com/post/46734908388/i-built-a-plugin-for-sublime-text-that-integrates) 
 
 ## Installation
 
-* Install bower: `npm install bower -g`
+* Install bower using NPM: `npm install bower -g`
 * Ensure that the bower binary is available in your path (type `bower` into your Terminal / Command prompt)
 * [Install msysgit](https://github.com/twitter/bower#a-note-for-windows-users) (Windows only)
 
