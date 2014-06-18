@@ -45,29 +45,9 @@ class InstallCommand(sublime_plugin.WindowCommand):
         except:
             sublime.error_message('Unable to parse .bowerrc configuration')
 
-    def get_project_settings(self):
-        projectData = sublime.active_window().project_data()
-        if projectData and 'settings' in projectData and 'bower' in projectData.get('settings'):
-            return projectData.get('settings').get('bower')
-        return {}
-
-    def get_plugin_settings(self):
-        pluginSettings = sublime.load_settings('Bower.sublime-settings')
-        if pluginSettings:
-            return pluginSettings
-        return {}
-
     def get_registry_url(self):
         config = self.get_bower_config()
         if 'registry' in config:
             return config.get('registry')
-
-        projectSettings = self.get_project_settings()
-        if 'registry' in projectSettings:
-            return projectSettings.get('registry')
-
-        pluginSettings = self.get_plugin_settings()
-        if pluginSettings.get('registry'):
-            return pluginSettings.get('registry')
 
         return None

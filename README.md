@@ -39,39 +39,6 @@ On Windows, inside a command prompt (cmd.exe):
   git clone git://github.com/benschwarz/sublime-bower.git Bower
 ```
 
-## Configuration
-
-The default Bower registry URL can be overridden as follows (listed in order of decreasing priority):
-
-* `.bowerrc` file located in project root folder:
-	
-	```json
-	{
-		"registry": "https://mycustomregistry.example.com"
-	}
-	```
-	
-* Project settings file:
-	
-	```json
-	{
-		"folders": [],
-		"settings": {
-			"bower": {
-				"registry": "https://mycustomregistry.example.com"
-			}
-		}
-	}
-	```
-	
-* Bower plugin settings file (`Preferences > Package Settings > Bower > Settings - User`):
-	
-	```json
-	{
-		"registry": "https://mycustomregistry.example.com"
-	}
-	```
-
 ## Platforms
 
 * Works on Sublime text 2 & 3
