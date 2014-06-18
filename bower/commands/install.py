@@ -47,7 +47,17 @@ class InstallCommand(sublime_plugin.WindowCommand):
 
     def get_registry_url(self):
         config = self.get_bower_config()
-        if 'registry' in config:
-            return config.get('registry')
+        
+        registry = config.get('registry')
+        if not registry:
+            return None
+        if isinstance(registry, str):
+            return registry
+        if isinstance(registry, dict):
+            searchRegistry = registry.get('search')
+            if isinstance(searchRegistry, str):
+                return searchRegistry
+            if isinstance(searchRegistry, list):
+                return searchRegistry[0]
 
         return None
