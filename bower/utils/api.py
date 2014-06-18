@@ -21,8 +21,7 @@ except ImportError:
 class API():
     def get(self, endpoint, host, *args):
         if not host:
-            sublime.error_message('No registry URL specified')
-            raise Exception('No registry URL specified')
+            host = 'https://bower.herokuapp.com'
 
         request = req.Request(host + '/' + endpoint)
 
