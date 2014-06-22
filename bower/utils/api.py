@@ -1,5 +1,6 @@
 import json
 import gzip
+import urllib.error
 import sublime
 
 try:
@@ -18,14 +19,16 @@ except ImportError:
 
 
 class API():
-    def get(self, endpoint, *args):
-        host = "http://bower.herokuapp.com/"
-        request = req.Request(host + endpoint)
+    def get(self, endpoint, host, *args):
+        if not host:
+            host = 'https://bower.herokuapp.com'
+
+        request = req.Request(host + '/' + endpoint)
 
         try:
             response = req.urlopen(request)
         except urllib.error.HTTPError:
-            sublime.error_message('Unable to connect to ' + host + endpoint + ". Check your internet connection.")
+            sublime.error_message('Unable to connect to ' + host + '/' + endpoint + ". Check your internet connection.")
 
         responseText = response.read().decode('utf-8', 'replace')
 
