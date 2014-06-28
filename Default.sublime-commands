@@ -13,5 +13,10 @@
       "caption": "Bower: Configure project",
       "command": "bowerrc",
       "args": {}
+    },
+    {
+      "caption": "Bower: Install dependencies",
+      "command": "install_dependencies",
+      "args": {}
     }
 ]
