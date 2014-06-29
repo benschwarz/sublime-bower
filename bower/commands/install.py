@@ -11,6 +11,13 @@ except ImportError:
 
 
 class InstallCommand(sublime_plugin.WindowCommand):
+    def get_config_path(self):
+        project_file_path = self.window.project_file_name()
+        if not project_file_path:
+            return self.window.folders()[0]
+        else:
+            return os.path.dirname(project_file_path)
+
     def run(self, *args, **kwargs):
         self.list_packages()
 
@@ -30,11 +37,11 @@ class InstallCommand(sublime_plugin.WindowCommand):
                 self.window.new_file()
 
             name = self.fileList[index][0]
-            cwd = self.window.folders()[0]
+            cwd = self.get_config_path()
             self.window.run_command("download_package", {"pkg_name": name, "cwd": cwd})
 
     def get_bower_config(self):
-        path = os.path.join(self.window.folders()[0], '.bowerrc')
+        path = os.path.join(self.get_config_path(), '.bowerrc')
 
         if not os.path.exists(path):
             return {}
@@ -47,7 +54,7 @@ class InstallCommand(sublime_plugin.WindowCommand):
 
     def get_registry_url(self):
         config = self.get_bower_config()
-        
+
         registry = config.get('registry')
         if not registry:
             return None

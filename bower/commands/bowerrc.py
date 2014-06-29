@@ -7,7 +7,12 @@ import os
 class BowerrcCommand(sublime_plugin.WindowCommand):
     def run(self):
         try:
-            path = os.path.join(self.window.folders()[0], '.bowerrc')
+            project_file_path = self.window.project_file_name()
+
+            if not project_file_path:
+                path = os.path.join(self.window.folders()[0], '.bowerrc')
+            else:
+                path = os.path.join(os.path.dirname(project_file_path), '.bowerrc')
 
             if not os.path.exists(path):
                 rc = json.dumps({'directory': 'components'}, indent=2)
