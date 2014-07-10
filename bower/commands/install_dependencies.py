@@ -11,11 +11,11 @@ except ImportError:
     from bower.utils.cli import CLI
 
 class InstallDependenciesCommand(sublime_plugin.WindowCommand):
-    def get_config_path(self):
+    def config_path(self):
         try:
             project_file_path = self.window.project_file_name()
             return os.path.dirname(project_file_path)
-        except:
+        except AttributeError:
             return self.window.folders()[0]
 
     def run(self):
@@ -23,4 +23,4 @@ class InstallDependenciesCommand(sublime_plugin.WindowCommand):
 
     def install_package(self):
         command = ['install', '--save']
-        CLI().execute(command, cwd=self.get_config_path())
+        CLI().execute(command, cwd=self.config_path())
