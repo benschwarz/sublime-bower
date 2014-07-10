@@ -12,11 +12,11 @@ except ImportError:
 
 class InstallCommand(sublime_plugin.WindowCommand):
     def get_config_path(self):
-        project_file_path = self.window.project_file_name()
-        if not project_file_path:
-            return self.window.folders()[0]
-        else:
+        try:
+            project_file_path = self.window.project_file_name()
             return os.path.dirname(project_file_path)
+        except:
+            return self.window.folders()[0]
 
     def run(self, *args, **kwargs):
         self.list_packages()
