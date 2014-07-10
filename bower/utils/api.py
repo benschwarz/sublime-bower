@@ -1,6 +1,5 @@
 import json
 import gzip
-import urllib.error
 import sublime
 
 try:
@@ -27,7 +26,7 @@ class API():
 
         try:
             response = req.urlopen(request)
-        except urllib.error.HTTPError:
+        except:
             sublime.error_message('Unable to connect to ' + host + '/' + endpoint + ". Check your internet connection.")
 
         responseText = response.read().decode('utf-8', 'replace')
